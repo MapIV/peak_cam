@@ -220,7 +220,8 @@ void Peak_Cam::acquisitionLoop()
             // cv_bridge Image is converted to sensor_msgs/Image to publish on ROS Topic
             cv_bridge::CvImage cvBridgeImage;
             cvBridgeImage.header.stamp = ros::Time::now();
-            cvBridgeImage.header.frame_id = peak_params.selectedDevice;
+            cvBridgeImage.header.frame_id = "camera";
+            //cvBridgeImage.header.frame_id = peak_params.selectedDevice;
             cvBridgeImage.encoding = sensor_msgs::image_encodings::BGR8; 
             cvBridgeImage.image = cvImage; 
             image_publisher.publish(cvBridgeImage.toImageMsg());    
