@@ -230,5 +230,16 @@ target_link_libraries(${PROJECT_NAME}_node
   ${catkin_LIBRARIES}
 )
 
+install(TARGETS
+ peak_cam_node
+ DESTINATION lib/${PROJECT_NAME}
+)
+
+install(
+  DIRECTORY
+    launch
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
+
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
